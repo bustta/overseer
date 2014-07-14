@@ -14,3 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require twitter/bootstrap
+
+$(function(){
+  /* Your JavaScript goes here... */
+});

@@ -3,18 +3,37 @@
 <table>
   <thead>
     <tr>
+      <th>CaseName</th>
+      <th>TargetLB</th>
+      <th>DigSite</th>
+      <th>DigArea</th>
+      <th>CaseStart</th>
+      <th>CaseEnd</th>
+      <th>ConstructionUnit</th>
+      <th>Supervise</th>
+      <th>ExamUnit</th>
       <th></th>
-      <th></th>
-      <th></th>
+      <!-- <th></th>
+      <th></th> -->
     </tr>
   </thead>
 
   <tbody>
     <% @cases.each do |eachCase| %>
       <tr>
-        <td><%= link_to 'Show', eachCase %></td>
-        <td><%= link_to 'Edit', edit_case_path(eachCase) %></td>
-        <td><%= link_to 'Destroy', eachCase, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+        <td><%= eachCase.CaseName %></td>
+        <td><%= eachCase.TargetLB %></td>
+        <td><%= eachCase.DigSite %></td>
+        <td><%= eachCase.DigArea %></td>
+        <td><%= eachCase.CaseStart %></td>
+        <td><%= eachCase.CaseEnd %></td>
+        <td><%= eachCase.ConstructionUnit %></td>
+        <td><%= eachCase.Supervise %></td>
+        <td><%= eachCase.ExamUnit %></td>
+        <td><%= link_to 'Detail', eachCase %></td>
+        <!-- <td><%= link_to 'Edit', edit_case_path(eachCase) %></td>
+        <td><%= link_to 'Destroy', eachCase, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
       </tr>
     <% end %>
   </tbody>
@@ -22,4 +41,4 @@
 
 <br>
 
-<%= link_to 'New Case', new_case_path %>
+ <%#= link_to 'New Case', new_case_path %>
