@@ -1,4 +1,49 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_case_path(@case) %> |
+<table class="table">
+    <tr>
+      <th>CaseType</th><td><%= @case.CaseType %></td>
+    </tr>
+    <tr>
+      <th>AppUnit</th><td><%= @case.AppUnit %></td>
+    </tr>
+    <tr>
+      <th>CaseName</th><td><%= @case.CaseName %></td>
+    </tr>
+    <tr>
+      <th>TargetLB</th><td><%= @case.TargetLB %></td>
+    </tr>
+    <tr>
+      <th>DigSite</th><td><%= @case.DigSite %></td>
+    </tr>
+    <tr>
+      <th>DigArea</th><td><%= @case.DigArea %></td>
+    </tr>
+    <tr>
+      <th>CaseStart</th><td><%= @case.CaseStart %></td>
+    </tr>
+    <tr>
+      <th>CaseEnd</th><td><%= @case.CaseEnd %></td>
+    </tr>
+    <tr>
+      <th>ConstructionUnit</th><td><%= @case.ConstructionUnit %></td>
+    </tr>
+    <tr>
+      <th>Construction_Tel</th><td><%= @case.Construction_Tel %></td>
+    </tr>
+    <tr>
+      <th>Supervise</th><td><%= @case.Supervise %></td>
+    </tr>
+    <tr>
+      <th>Supervise_Man</th><td><%= @case.Supervise_Man %></td>
+    </tr>
+    <tr>
+      <th>Supervise_Tel</th><td><%= @case.Supervise_Tel %></td>
+    </tr>
+    <tr>
+      <th>ExamUnit</th><td><%= @case.ExamUnit %></td>
+    </tr>
+
+
+</table>
 <%= link_to 'Back', cases_path %>
