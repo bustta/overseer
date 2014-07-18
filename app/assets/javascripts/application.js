@@ -15,6 +15,9 @@
 //= require turbolinks
 //= require_tree .
 //= require twitter/bootstrap
+//= require dataTables/jquery.dataTables
+//= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
+//= require dataTables/extras/dataTables.responsive
 
 $(function(){
   /* Your JavaScript goes here... */

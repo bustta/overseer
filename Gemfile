@@ -40,6 +40,11 @@ gem "twitter-bootstrap-rails"
 gem 'devise'
 gem 'omniauth-facebook'
 
+gem 'jquery-datatables-rails', '~> 2.1.10.0.3'
+gem 'lodash-rails'
+
+gem 'activeadmin', github: 'gregbell/active_admin'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

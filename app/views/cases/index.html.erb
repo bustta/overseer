@@ -1,6 +1,6 @@
 <h1>Listing cases</h1>
 
-<table class="table">
+<table class="table dataTable">
   <thead>
     <tr>
       <th>CaseName</th>
@@ -34,4 +34,11 @@
 </table>
 
 <br>
+
+<script type="text/javascript">
+  var tableElement = $('.dataTable');
+  tableElement.dataTable({
+    sPaginationType  : 'bootstrap'
+});
+</script>
 
