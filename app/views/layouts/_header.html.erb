@@ -9,8 +9,7 @@
     <div class="collapse navbar-collapse" id="navbar-right-link">
       <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
-
-            <% if isSigninFromFB(current_user) %>
+            <% if !current_user.nil? && current_user.provider == 'facebook' %>
               <li> <%= link_to(current_user.email, '#') %> </li>
             <% else %>
               <li> <%= link_to(current_user.email, edit_user_registration_path) %> </li>
