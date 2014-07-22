@@ -1,27 +1,32 @@
-<%= nav_bar :brand => "Overseer", :brand_link => root_path do %>
-  <%= menu_group do %>
-      <%= menu_item "Home", root_path %>
-      <%= menu_item "About Us", '#' %>
-      <%= menu_item "Contact", '#' %>
-  <% end %>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Overseer</a>
+    </div>
 
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="navbar-right-link">
+      <ul class="nav navbar-nav navbar-right">
+        <% if current_user %>
 
-  <%= menu_group :pull => :right do %>
-    <% if current_user %>
+            <% if isSigninFromFB(current_user) %>
+              <li> <%= link_to(current_user.email, '#') %> </li>
+            <% else %>
+              <li> <%= link_to(current_user.email, edit_user_registration_path) %> </li>
+            <% end %>
 
-      <% if isSigninFromFB(current_user) %>
-        <%= menu_item current_user.email, '#' %>
-      <% else %>
-        <%= menu_item current_user.email, edit_user_registration_path %>
-      <% end %>
+            <li> <%= link_to("登出", destroy_user_session_path, :method => :delete ) %> </li>
 
-      <%= menu_item "Log Out", destroy_user_session_path, :method => :delete %>
+          <% else %>
 
-    <% else %>
-      <%= menu_item "Sign in with FB", user_omniauth_authorize_path(:facebook) %>
-      <%= menu_item "Sign Up", new_user_registration_path %>
-      <%= menu_item "Log in", new_user_session_path %>
-    <% end %>
-  <% end %>
+            <li> <%= link_to("FB登入", user_omniauth_authorize_path(:facebook) ) %> </li>
+            <li> <%= link_to("註冊", new_user_registration_path) %> </li>
+            <li> <%= link_to("登入", new_user_session_path) %> </li>
+        <% end %>
 
-<% end %>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+

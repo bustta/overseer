@@ -6,7 +6,6 @@
       <th>CaseName</th>
       <th>TargetLB</th>
       <th>DigSite</th>
-      <th>DigArea</th>
       <th>CaseStart</th>
       <th>CaseEnd</th>
       <th>ConstructionUnit</th>
@@ -22,11 +21,10 @@
         <td><%= eachCase.CaseName %></td>
         <td><%= eachCase.TargetLB %></td>
         <td><%= eachCase.DigSite %></td>
-        <td><%= eachCase.DigArea %></td>
         <td><%= eachCase.CaseStart %></td>
         <td><%= eachCase.CaseEnd %></td>
         <td><%= eachCase.ConstructionUnit %></td>
-        <td><%= link_to 'Detail', eachCase, :class=> 'btn' %></td>
+        <td><%= link_to 'Detail', eachCase, :class => 'btn btn-default' %></td>
 
       </tr>
     <% end %>
@@ -38,7 +36,8 @@
 <script type="text/javascript">
   var tableElement = $('.dataTable');
   tableElement.dataTable({
-    sPaginationType  : 'bootstrap'
-});
+    "sPaginationType" :"bootstrap"
+
+  });
 </script>
 
