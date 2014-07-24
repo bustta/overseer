@@ -17,10 +17,10 @@
     <% @cases.each do |eachCase| %>
       <tr>
 
-        <td><%= eachCase.CaseName %></td>
+        <td><%= truncate(eachCase.CaseName, :length => 30) %></td>
         <td><%= eachCase.DigSite %></td>
-        <td><%= eachCase.CaseStart %></td>
-        <td><%= eachCase.CaseEnd %></td>
+        <td><%= eachCase.CaseStart.to_s(:long) %></td>
+        <td><%= eachCase.CaseEnd.to_s(:long) %></td>
         <td><%= eachCase.ConstructionUnit %></td>
         <td><%= link_to 'Detail', eachCase, :class => 'btn btn-default' %></td>
 

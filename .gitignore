@@ -16,3 +16,5 @@
 /tmp
 
 /config/initializers/devise.rb
+/node
+/node_modules
