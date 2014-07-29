@@ -14,10 +14,42 @@ jsonCases = JSON.parse(responseCases)
 # Case.first().destroy();
 
 jsonCases.each do |eachCase|
+  #eachCase = jsonCases[19]
+
+  digsite = eachCase['DigSite']
+  responseCases = GoogleGeo.new(digsite).getData
+  jsonObj = JSON.parse(responseCases.body)
+  info = jsonObj['results']
+  if (info[0].has_key?("geometry") &&
+      info[0]['geometry'].has_key?("location") &&
+      info[0]['geometry']['location'].has_key?("lat"))
+    lat = info[0]['geometry']['location']['lat']
+    lng = info[0]['geometry']['location']['lng']
+
+    eachCase['lat'] = lat
+    eachCase['lng'] = lng
+  end
+
   Case.create(eachCase)
 end
 
+
+
 puts "End"
+end
+
+class GoogleGeo
+  include HTTParty
+
+  def initialize(address)
+    dataSite = 'http://maps.googleapis.com/maps/api/geocode/json?sensor=false&address='
+    @requestUrl = dataSite << address
+  end
+
+  def getData
+    GoogleGeo.get(URI.encode(@requestUrl))
+  end
+
 end
 
 

@@ -8,7 +8,10 @@ task :getGeoInfoTask, [:address] => :environment do |t, args|
   #jsonInfo = responseCases.to_json
   #p responseCases.to_json
   jsonObj = JSON.parse(responseCases.body)
-  p info = jsonObj['results']
+  info = jsonObj['results']
+  lat = info[0]['geometry']['location']['lat']
+  long = info[0]['geometry']['location']['lng']
+  p "lat: #{lat}, lng: #{long}"
 end
 
 class GoogleGeo
