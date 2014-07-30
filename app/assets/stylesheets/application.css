@@ -15,3 +15,8 @@
  */
 
  @import "bootstrap";
+
+ #map {
+  width: 800px;
+  height: 400px;
+ }

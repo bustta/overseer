@@ -14,11 +14,17 @@ jsonCases = JSON.parse(responseCases)
 # Case.first().destroy();
 
 jsonCases.each do |eachCase|
-  #eachCase = jsonCases[19]
 
   digsite = eachCase['DigSite']
   responseCases = GoogleGeo.new(digsite).getData
   jsonObj = JSON.parse(responseCases.body)
+  status = jsonObj['status']
+
+  if !status.eql? 'OK' then
+    Case.create(eachCase)
+    next
+  end
+
   info = jsonObj['results']
   if (info[0].has_key?("geometry") &&
       info[0]['geometry'].has_key?("location") &&
