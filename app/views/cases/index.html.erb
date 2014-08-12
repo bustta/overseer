@@ -17,7 +17,11 @@
     <% @cases.each do |eachCase| %>
       <tr>
 
-        <td><%= truncate(eachCase.CaseName, :length => 30) %></td>
+        <td>
+          <%= truncate(eachCase.CaseName, :length => 30) %>
+          <%= tabForNewCase(eachCase) %>
+          <%= tabOnDigging(eachCase)  %>
+        </td>
         <td><%= eachCase.DigSite %></td>
         <td><%= eachCase.CaseStart.to_s(:long) %></td>
         <td><%= eachCase.CaseEnd.to_s(:long) %></td>
