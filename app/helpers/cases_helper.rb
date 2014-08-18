@@ -9,6 +9,13 @@ module CasesHelper
     if (DateTime.now >= thisCase.CaseStart && DateTime.now <= thisCase.CaseEnd)
       content_tag(:button, 'Digging', :class => 'btn btn-warning btn-xs')
     end
-
   end
+
+  def dispCaseName(thisCase)
+    content_tag(:span,
+      truncate(thisCase.CaseName, :length => 30),
+      :class => 'caseNameSpan',
+      :title => thisCase.CaseName)
+  end
+
 end

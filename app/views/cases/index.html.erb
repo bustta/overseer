@@ -18,7 +18,7 @@
       <tr>
 
         <td>
-          <%= truncate(eachCase.CaseName, :length => 30) %>
+          <%= dispCaseName(eachCase) %>
           <%= tabForNewCase(eachCase) %>
           <%= tabOnDigging(eachCase)  %>
         </td>
@@ -38,5 +38,7 @@
 <script type="text/javascript">
   var tableElement = $('.dataTable');
   tableElement.dataTable();
+
+
 </script>
 

@@ -1,0 +1,22 @@
+<div class="caseDetailLeft"></div>
+<div class="caseDetail">
+  <%= simple_form_for @case,
+    defaults: { input_html: { class: 'form-control' } } do |f| %>
+    <%= f.input :CaseType, input_html: { length: 10 } %>
+    <%= f.input :AppUnit %>
+    <%= f.input :CaseName %>
+    <%= f.input :TargetLB %>
+    <%= f.input :DigSite %>
+    <%= f.input :DigArea, as: :text %>
+    <%= f.input :CaseStart, as: :date %>
+    <%= f.input :CaseEnd, as: :date %>
+    <%= f.input :ConstructionUnit %>
+    <%= f.input :Construction_Tel %>
+    <%= f.input :Supervise %>
+    <%= f.input :Supervise_Tel %>
+    <%= f.input :ExamUnit %>
+    <%= f.input :lat %>
+    <%= f.input :lng %>
+  <% end %>
+</div>
+<div class="caseDetailRight"></div>
