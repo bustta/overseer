@@ -2,3 +2,31 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+.caseDetailLeft {
+  display: inline-block;
+  width: 15%;
+
+}
+
+.caseDetail {
+  display: inline-block;
+  width: 70%;
+  min-width: 600px;
+}
+
+.caseDetailRight {
+  display: inline-block;
+  width: 15%;
+}
+
+.halfWidth {
+  width: 50%;
+}
+
+#mapCanvas {
+  width: 50%;
+  height: 400px;
+  min-width: 600px;
+}
+

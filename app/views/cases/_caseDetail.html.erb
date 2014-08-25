@@ -1,13 +1,13 @@
-<div class="caseDetailLeft"></div>
-<div class="caseDetail">
+
+<div class="caseContent">
   <%= simple_form_for @case,
-    defaults: { input_html: { class: 'form-control' } } do |f| %>
-    <%= f.input :CaseType, input_html: { length: 10 } %>
+    defaults: { input_html: { class: 'form-control halfWidth' } } do |f| %>
+    <%= f.input :CaseType %>
     <%= f.input :AppUnit %>
     <%= f.input :CaseName %>
     <%= f.input :TargetLB %>
     <%= f.input :DigSite %>
-    <%= f.input :DigArea, as: :text %>
+    <%= f.input :DigArea %>
     <%= f.input :CaseStart, as: :date %>
     <%= f.input :CaseEnd, as: :date %>
     <%= f.input :ConstructionUnit %>
@@ -19,4 +19,3 @@
     <%= f.input :lng %>
   <% end %>
 </div>
-<div class="caseDetailRight"></div>
