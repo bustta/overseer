@@ -1,52 +1,23 @@
 <div class="caseDetailLeft"></div>
 <div class="caseDetail">
+  <p id="notice"><%= notice %></p>
 
-<p id="notice"><%= notice %></p>
+  <%= render 'caseDetail' %>
 
-<%= render 'caseDetail' %>
-
-<div id="mapCanvas" data-lat="<%= @case.lat %>" data-lng="<%= @case.lng %> " data-site="<%= @case.DigSite %>"></div>
-
-<span class='prePage btn btn-default'>前一頁</span>
-
+  <div id="mapCanvas" data-lat="<%= @case.lat %>" data-lng="<%= @case.lng %> " data-site="<%= @case.DigSite %>"></div>
+  <span class='prePage btn btn-default'>前一頁</span>
 </div>
 <div class="caseDetailRight"></div>
 
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp">
-</script>
 
-<script type="text/javascript">
+<script type="text/javascript" >
   $('.prePage').click(function(){
     history.go(-1);
   });
 
-  function initialize () {
-    var lat = $('#mapCanvas').data('lat');
-    var lng = $('#mapCanvas').data('lng');
-    var location = new google.maps.LatLng( lat, lng);
-    var mapOptions = {
-      center: location,
-      zoom: 15
-    };
-    var map = new google.maps.Map(document.getElementById("mapCanvas"), mapOptions);
-
-    var marker = new google.maps.Marker({
-      position: location,
-      map: map
-    });
-
-    var infowindow = new google.maps.InfoWindow({
-      content: $('#mapCanvas').data('site')
-    });
-    google.maps.event.addListener(marker, 'click', function() {
-      infowindow.open(map, marker);
-    });
-
-  };
-
-  google.maps.event.addDomListener(window, 'load', initialize);
-
+    loadScript();
 
 </script>
+
 
 

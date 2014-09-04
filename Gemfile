@@ -47,10 +47,13 @@ gem 'lodash-rails'
 
 gem 'activeadmin', github: 'gregbell/active_admin'
 
-gem 'gmaps4rails'
 gem 'bower-rails'
 
 gem 'simple_form'
+
+group :development do
+  gem "better_errors"
+end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
